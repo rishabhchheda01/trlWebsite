@@ -1,0 +1,27 @@
+/* Minimal styles for the LandingPage component */
+.landing {
+  height: 100vh;
+  width: 100vw;
+  place-items: center;
+  background: #E11933;
+  color: white;
+  padding: 32px 16px;
+  text-align: center;
+}
+
+.landing-image {
+  width: min(90vw, 540px);
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto 16px;
+}
+
+.landing-description {
+  margin: 0;
+}
+
+h2 {
+  font-weight: lighter;
+}
+
