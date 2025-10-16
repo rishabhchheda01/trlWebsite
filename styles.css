@@ -1,7 +1,11 @@
 @import "tailwindcss"; 
 
-@layer base{
-    .link_tag{
-        @apply m-0 list-none; 
-    }
+html, body {
+    background-color: black;
+    min-height: 100vh;
+}
+
+.link_tag {
+    margin: 0;
+    list-style: none;
 }

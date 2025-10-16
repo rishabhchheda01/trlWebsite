@@ -13,7 +13,7 @@ export default function Navigation({ menuItems }){
                     <h1><Link className = "link_tag font-bold" to = "/">Terrapin Record Label</Link></h1>
                 </div>
                 <nav id = "navbar">
-                    <ul className="flex flex-row-reverse h-[100%] list-none m-0 p-0 justify-between items-center">
+                    <ul className="flex flex-row-reverse h-[100%] list-none m-0 p-0 justify-between items-center gap-4">
                         {menu_items}
                     </ul>
                 </nav>
