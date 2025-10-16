@@ -22,6 +22,12 @@ export default function Eboard(){
             position: "Graphic Design",
             image: "../Images/Eboard_Pics/Robert.png",
             description: "I'm a junior studying business administration with a concentration in marketing. I'm passionate about music and the entertainment industry, and I'm excited to be a part of the Terrapin Record Label team."
+        },
+        {
+            name: "someone else",
+            position: "someone else",
+            image: "../Images/Eboard_Pics/someone_else.png",
+            description: "i love TRL"
         }
     ]
 
