@@ -5,6 +5,13 @@ export default function Eboard(){
     const menu_items = [{name: "Eboard", url: "/eboard"}, {name: "About", url: "/about"}]
     
     const eboardMembers = [
+
+        {
+            name: "Sarah Zhu",
+            position: "President",
+            image: "../Images/Eboard_Pics/Sarah.png",
+            description: "Sarah is a senior studying Computer Science with a minor in Sustainability Studies. She’s been with TRL for almost four years—starting out as a general member, moving into the Artist Relations Manager role, and now serving as President. Outside of TRL, you can catch her as the lead singer and guitarist of her band no girlfriend, where she channels her love for music and performing."
+        },
         {
             name: "Jolie Boiadjieva",
             position: "Artist Relations",
@@ -35,8 +42,8 @@ export default function Eboard(){
         <div>
             <Navigation menuItems={ menu_items } />
             <div className="p-5">
-                <h1 className="text-white w-[100%] text-center font-geist text-4xl m-5">Executive Board</h1>
-                <div className="flex flex-row justify-center gap-8 mt-5">
+                <h1 className="text-white w-[100%] text-center font-geist text-4xl m-7">Executive Board</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-5 justify-items-center">
                     {eboardMembers.map((member, index) => (
                         <EboardMember 
                             key={index}
@@ -44,7 +51,7 @@ export default function Eboard(){
                             position={member.position}
                             image={member.image}
                             description={member.description}
-                            className="w-72"
+                            className="w-full max-w-75"
                         />
                     ))}
                 </div>
