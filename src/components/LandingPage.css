@@ -7,6 +7,15 @@
   color: white;
   padding: 32px 16px;
   text-align: center;
+  font-family: Helvetica, sans-serif;
+
+  /* --- added animation --- */
+  display: grid;
+  background: linear-gradient(270deg, #E11933, #c7142c, #E11933);
+  background-size: 200% 200%;
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards, bgShift 4s ease-in-out infinite;
+  /* --- end animation --- */
 }
 
 .landing-image {
@@ -15,6 +24,14 @@
   border-radius: 12px;
   display: block;
   margin: 0 auto 16px;
+
+  /* --- added animation --- */
+  animation: slideUp 0.8s ease-out 1s forwards;
+  animation: float 2s ease-in-out infinite;
+  
+  transform: scale(0.8);
+  /*animation: popIn 0.6s ease-out 0.2s forwards, float 3s ease-in-out infinite 0.8s; 
+  /* --- end animation --- */
 }
 
 .landing-description {
@@ -23,5 +40,41 @@
 
 h2 {
   font-weight: lighter;
+  
 }
 
+
+/* Keyframes for all animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes popIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Background gradient animation */
+@keyframes bgShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Floating logo effect */
+@keyframes float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+/* --- end animation --- */
