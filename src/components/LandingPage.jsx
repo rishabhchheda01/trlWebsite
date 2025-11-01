@@ -11,12 +11,12 @@ export default function LandingPage() {
           src={logo}
           alt="TRL logo"
         />
-        <>
+        <div className="landing-description">
         <h1>Terrapin Record Label</h1>
-        <h2 className="landing-description">
+        <h2>
           Fostering a supportive community of student musicians on campus at UMD, est. 2017
         </h2>
-        </>
+        </div>
       </section>
     </main>
   )
