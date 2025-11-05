@@ -13,7 +13,8 @@ export default function Navbar() {
         <li><a href="/about">About Us</a></li>
         <li><a href="/events">Events</a></li>
         <li><a href="/artists">Artists</a></li>
-        <li><a href="/contact">Contact Us</a></li>
+        <li><a href="/eboard">E-Board</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
     </nav>
   );

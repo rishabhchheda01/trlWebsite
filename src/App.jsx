@@ -13,6 +13,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/eboard" element={<Eboard />} />
         <Route path="/events" element={<EventsPage />} />
+        {/* ADD CONTACT PAGE */}
       </Routes>
 
     </BrowserRouter>
