@@ -1,10 +1,9 @@
-import Navigation from "../Components/Navigation"
+import Navbar from "../components/Navbar";
 
-export default function About(){
-    const menu_items = [{name: "About", url: "/about"}]
-    return(
+export default function About() {
+    return (
         <>
-            <Navigation menuItems={ menu_items } />
+            <Navbar />
             <div className="p-5">
                 <h1 className="text-red-500 w-[100%] text-center font-bold">About</h1>
                 <div className="flex flex-row-reverse gap-5">
@@ -17,12 +16,12 @@ export default function About(){
                     </div>
                     <div className="h-[100%] bg-black w-[25%] flex flex-col p-3 gap-3 items-center">
                         <h1 className="text-red-500 font-bold">Follow us</h1>
-                        <p className="text-white"><a href = "https://www.instagram.com/terrapinrecordlabel/">Instagram</a></p>
+                        <p className="text-white"><a href="https://www.instagram.com/terrapinrecordlabel/">Instagram</a></p>
                     </div>
                 </div>
             </div>
-            
-            
+
+
         </>
     )
 }

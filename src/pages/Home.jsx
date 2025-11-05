@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom"
-import Navigation from "../Components/Navigation"
+import Navbar from "../components/Navbar";
 
-export default function Home(){
-    const menu_items = [{name: "About", url: "/about"}]
-    return(
+export default function Home() {
+    return (
         <>
-            <Navigation menuItems={ menu_items } />
+            <Navbar />
         </>
     )
 }

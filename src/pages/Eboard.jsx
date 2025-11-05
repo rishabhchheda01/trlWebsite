@@ -1,9 +1,7 @@
-import Navigation from "../Components/Navigation"
+import Navbar from "../components/Navbar";
 import EboardMember from "../Components/EboardMember"
 
 export default function Eboard() {
-    const menu_items = [{ name: "Eboard", url: "/eboard" }, { name: "About", url: "/about" }]
-
     const eboardMembers = [
 
         {
@@ -67,7 +65,7 @@ export default function Eboard() {
 
     return (
         <div>
-            <Navigation menuItems={menu_items} />
+            <Navbar />
             <div className="p-5">
                 <h1 className="text-white w-[100%] text-center font-geist text-4xl m-7">Executive Board</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-5 justify-items-center">
