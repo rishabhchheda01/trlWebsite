@@ -1,5 +1,5 @@
-import Navigation from "../components/Navigation.jsx"
-import EboardMember from "../components/EboardMember"
+import Navigation from "../Components/Navigation"
+import EboardMember from "../Components/EboardMember"
 
 export default function Eboard() {
     const menu_items = [{ name: "Eboard", url: "/eboard" }, { name: "About", url: "/about" }]
