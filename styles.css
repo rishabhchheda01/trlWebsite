@@ -14,3 +14,8 @@ html, body {
     margin: 0;
     list-style: none;
 }
+
+@layer base{
+    .link_tag{
+        @apply m-0 list-none; 
+    }
