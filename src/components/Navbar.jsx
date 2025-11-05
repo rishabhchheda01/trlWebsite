@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import logo from "../assets/nav-logo.png";
+import logo from "../assets/nav_logo.png";
 
 // Navbar displays the top navigation with a left-aligned logo and right-aligned links.
 // Links are defined in an array so it's easy to add/remove without editing markup.

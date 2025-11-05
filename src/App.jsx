@@ -1,12 +1,10 @@
 import React from 'react'
 import Navbar from './components/Navbar.jsx'
-import LandingPage from './components/LandingPage.jsx'
+import LandingPage from './pages/LandingPage.jsx'
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <LandingPage />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />

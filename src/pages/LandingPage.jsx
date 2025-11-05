@@ -1,6 +1,6 @@
 import React from 'react'
 import './LandingPage.css'
-import logo from "../assets/logo.png";
+import logo from "../assets/Terrapin_Record_Label.png";
 
 export default function LandingPage() {
   return (
