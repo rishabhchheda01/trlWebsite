@@ -1,21 +1,22 @@
-@import "tailwindcss"; 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@theme {
-  --font-family-geist: "Geist", ui-sans-serif, system-ui, sans-serif;
+:root {
+    --font-family-geist: "Geist", ui-sans-serif, system-ui, sans-serif;
 }
 
 html, body {
     background-color: black;
     min-height: 100vh;
-    font-family: "Geist", ui-sans-serif, system-ui, sans-serif;
-}
-
-.link_tag {
     margin: 0;
-    list-style: none;
+    font-family: var(--font-family-geist);
 }
 
-@layer base{
-    .link_tag{
-        @apply m-0 list-none; 
+@layer base {
+    .link_tag {
+        margin: 0;
+        list-style: none;
     }
+
+}
