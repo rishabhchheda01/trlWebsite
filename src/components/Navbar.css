@@ -1,7 +1,8 @@
 /* Minimal styles for the Navbar component */
 .navbar {
   width: 100vw;
-  height: 10vh;
+  height: 12vh;
+  padding: auto;
   position: sticky;
   top: 0;
   background: #FED201;

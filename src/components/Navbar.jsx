@@ -1,20 +1,21 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import "./Navbar.css";
 import logo from "../assets/nav_logo.png";
 
-// Navbar displays the top navigation with a left-aligned logo and right-aligned links.
-// Links are defined in an array so it's easy to add/remove without editing markup.
 export default function Navbar() {
   const links = [
-    { label: "About Us", href: "#about" },
-    { label: "Events", href: "#events" },
-    { label: "Artists", href: "#artists" },
+    { label: "About Us", href: "/about" },
+    { label: "Events", href: "/events" },
+    { label: "Eboard", href: "/eboard" },
   ];
 
   return (
     <header className="navbar">
       <div className="nav-inner">
-        <img className="logo" src={logo} alt="TRL logo" />
+        <Link to="/">
+          <img className="logo" src={logo} alt="TRL logo" />
+        </Link>
         <nav className="nav-links">
           <ul className="link-list">
             {links.map(({ label, href }) => (
@@ -23,7 +24,7 @@ export default function Navbar() {
               </li>
             ))}
           </ul>
-          <a className="btn" href="#contact">
+          <a className="btn" href="/contact">
             Contact Us
           </a>
         </nav>

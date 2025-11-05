@@ -1,5 +1,5 @@
 import Navbar from "../components/Navbar";
-import EboardMember from "../Components/EboardMember"
+import EboardMember from "../components/EboardMember"
 
 export default function Eboard() {
     const eboardMembers = [
