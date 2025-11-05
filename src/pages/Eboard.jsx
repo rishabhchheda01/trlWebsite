@@ -1,9 +1,9 @@
-import Navigation from "../components/Navigation"
+import Navigation from "../components/Navigation.jsx"
 import EboardMember from "../components/EboardMember"
 
-export default function Eboard(){
-    const menu_items = [{name: "Eboard", url: "/eboard"}, {name: "About", url: "/about"}]
-    
+export default function Eboard() {
+    const menu_items = [{ name: "Eboard", url: "/eboard" }, { name: "About", url: "/about" }]
+
     const eboardMembers = [
 
         {
@@ -65,14 +65,14 @@ export default function Eboard(){
         },
     ]
 
-    return(
+    return (
         <div>
-            <Navigation menuItems={ menu_items } />
+            <Navigation menuItems={menu_items} />
             <div className="p-5">
                 <h1 className="text-white w-[100%] text-center font-geist text-4xl m-7">Executive Board</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 mt-5 justify-items-center">
                     {eboardMembers.map((member, index) => (
-                        <EboardMember 
+                        <EboardMember
                             key={index}
                             name={member.name}
                             position={member.position}
