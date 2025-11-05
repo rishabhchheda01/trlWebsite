@@ -1,48 +1,51 @@
+/* Minimal styles for the Navbar component */
 .navbar {
-  background-color: #FFD700;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 3rem;
-  color: black;
+  width: 100vw;
+  height: 10vh;
   position: sticky;
   top: 0;
-  z-index: 100;
+  background: #FED201;
+  font-family: Helvetica, sans-serif;
 }
 
-.navbar-left {
+.nav-inner {
+  margin: auto;
+  padding: 15px;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: space-between;
+  font-size: 20px;
 }
 
-.navbar-logo {
-  width: 300px;
-  height: 70px;
-  border-radius: 0%;
-  object-fit: fill;
+.logo {
+  width: 250px;
 }
 
-.navbar-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.navbar-links {
-  list-style: none;
+.nav-links {
   display: flex;
-  gap: 2rem;
+  align-items: center;
+  gap: 12px;
 }
 
-.navbar-links a {
-  color: black;
+.link-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+
+.link-list a {
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.2s ease;
+  color: black;
 }
 
-.navbar-links a:hover {
-  color: #333;
+.btn {
+  padding: 15px 20px;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  text-decoration: none;
 }
+
+

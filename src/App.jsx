@@ -1,21 +1,24 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom"
-import About from "./pages/about"
-import Home from "./pages/Home"
-import Eboard from "./pages/Eboard"
-import EventsPage from "./pages/Events/EventsPage"
+import React from 'react'
+import Navbar from './components/Navbar.jsx'
+import LandingPage from './components/LandingPage.jsx'
 
 export default function App() {
   return (
-    <BrowserRouter>
-
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/eboard" element={<Eboard />} />
-        <Route path="/events" element={<EventsPage />} />
-        {/* ADD CONTACT PAGE */}
-      </Routes>
-
-    </BrowserRouter>
+    <>
+      <Navbar />
+      <LandingPage />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/eboard" element={<Eboard />} />
+          <Route path="/events" element={<EventsPage />} />
+          {/* ADD CONTACT PAGE */}
+        </Routes>
+      </BrowserRouter>
+    </>
   )
 }
+
+
+
