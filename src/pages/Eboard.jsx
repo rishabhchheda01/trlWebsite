@@ -11,7 +11,13 @@ export default function Eboard() {
             description: "Sarah is a senior studying Computer Science with a minor in Sustainability Studies. She's been with TRL for almost four years—starting out as a general member, moving into the Artist Relations Manager role, and now serving as President. Outside of TRL, you can catch her as the lead singer and guitarist of her band no girlfriend, where she channels her love for music and performing.",
             linkedin: "https://linkedin.com/in/sarah-zhu"
         },
-
+    {
+            name: "Cadence Michels",
+            position: "Vice President",
+            image: "", // No image available ADD IT LATER
+            description: "",
+            linkedin: "https://www.linkedin.com/in/cadence-michels-83b7941b2/"
+        },
         {
             name: "Rishabh Chheda",
             position: "Treasurer",
@@ -49,7 +55,7 @@ export default function Eboard() {
         },
         {
             name: "David Montoya",
-            position: "?",
+            position: "Artist Relations",
             image: "../assets/eboard_pics/David.png",
             description: "David is a music lover who finds meaning in the moments that connect people.  Through songs, late-night jams, or the energy of live shows, there will never be a lackluster moment. Music has always been his way of understanding the world, a creative outlet that keeps him grounded and inspired. If David is not playing guitar or at a concert, he is studying on the pre-med track at the University of Maryland. He aims toward becoming an emergency physician in the future. For David, both music and medicine are about presence, emotion, and care. To him, they are two different rhythms that share the same heartbeat.",
             linkedin: "https://www.linkedin.com/in/david-montoya-b563ab297/"
