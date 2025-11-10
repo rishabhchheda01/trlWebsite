@@ -9,7 +9,7 @@ export default function LandingPage() {
   const handleActivate = (e) => {
     // allow keyboard and mouse activation
     if (e.type === 'click' || e.key === 'Enter' || e.key === ' ') {
-      navigate('/home')
+      navigate('/about')
     }
   }
 
