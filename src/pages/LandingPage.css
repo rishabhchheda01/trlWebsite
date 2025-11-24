@@ -1,26 +1,30 @@
-/* Minimal styles for the LandingPage component */
-.landing {
-  height: 100vh;
-  width: 100vw;
-  place-items: center;
+main {
   background: #E11933;
-  color: white;
-  text-align: center;
-  font-family: Helvetica, sans-serif;
-
+  min-height: 100vh;
   /* --- added animation --- */
   display: grid;
   background: linear-gradient(270deg, #E11933, #c7142c, #E11933);
   background-size: 200% 200%;
   opacity: 0;
   animation: fadeIn 0.8s ease-out forwards, bgShift 4s ease-in-out infinite;
-  /* --- end animation --- */
+}
+/* Minimal styles for the LandingPage component */
+.landing {
+  height: auto;
+  place-items: center;
+  background: #E11933;
+  color: white;
+  text-align: center;
+  font-family: 'Caveat', 'Permanent Marker', cursive;
+  display: grid;
+  
+
 }
 
 .landing-image {
   width: min(90vw, 550px);
   position: absolute;
-  top: 15vh;
+  top: 10vh;
   height: auto;
   display: block;
   margin: 0 auto 8px;
@@ -34,13 +38,80 @@
   /* --- end animation --- */
 }
 
+.guitar-image {
+  position: absolute;
+  width: 200px;
+  height: auto;
+  filter: 
+    drop-shadow(-2px -2px 0 white)
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px 2px 0 white)
+    drop-shadow(0 -2px 0 white)
+    drop-shadow(0 2px 0 white)
+    drop-shadow(-2px 0 0 white)
+    drop-shadow(2px 0 0 white);
+  z-index: 1;
+  right: 10%;
+  top: 30%;
+  animation: rotateSway 3s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.drums-image {
+  position: absolute;
+  width: 250px;
+  height: auto;
+  filter: 
+    drop-shadow(-2px -2px 0 white)
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px 2px 0 white)
+    drop-shadow(0 -2px 0 white)
+    drop-shadow(0 2px 0 white)
+    drop-shadow(-2px 0 0 white)
+    drop-shadow(2px 0 0 white);
+  left: 5%;
+  bottom: 20%;
+  animation: rotateSway 3.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+  transform-origin: center center;
+}
+
+.piano-image {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  filter: 
+    drop-shadow(-2px -2px 0 white)
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px 2px 0 white)
+    drop-shadow(2px 2px 0 white)
+    drop-shadow(0 -2px 0 white)
+    drop-shadow(0 2px 0 white)
+    drop-shadow(-2px 0 0 white)
+    drop-shadow(2px 0 0 white);
+  z-index: 1;
+  left: 10%;
+  top: 0%;
+  animation: rotateSway 4s ease-in-out infinite;
+  animation-delay: 1s;
+  transform-origin: center center;
+}
+
 .landing-description {
   position: absolute;
-  top: 80vh;
+  top: 70vh;
+}
+
+.landing-description h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
 }
 
 h2 {
-  font-weight: lighter;
+  font-weight: 600;
+  font-size: 1.5rem;
   
 }
 
@@ -76,6 +147,12 @@ h2 {
 @keyframes float {
   0%, 100% { transform: translateY(0) scale(1); }
   50% { transform: translateY(-10px) scale(1.02); }
+}
+
+/* Side to side rotation for instruments */
+@keyframes rotateSway {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
 }
 
 /* --- end animation --- */
