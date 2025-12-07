@@ -6,7 +6,7 @@
   background: #E11933;
   color: white;
   text-align: center;
-  font-family: Helvetica, sans-serif;
+  font-family: 'Georgia', 'Times New Roman', serif;
 
   /* --- added animation --- */
   display: grid;
@@ -18,9 +18,9 @@
 }
 
 .landing-image {
-  width: min(90vw, 550px);
+  width: min(90vw, 400px);
   position: absolute;
-  top: 15vh;
+  top: 20vh;
   height: auto;
   display: block;
   margin: 0 auto 8px;
@@ -36,7 +36,9 @@
 
 .landing-description {
   position: absolute;
-  top: 80vh;
+  top: 72vh;
+  padding-top: 20px;
+  width: 100%;
 }
 
 h2 {
