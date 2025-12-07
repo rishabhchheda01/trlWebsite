@@ -10,7 +10,7 @@
   font-family: 'Helvetica Neue', sans-serif;
 
   /* === Background image styling === */
-  background-image: url("../../assets/black-w-white-washbg.png");
+  background-image: url("trlWebsite/src/assets/black-bg-textured.jpeg");
   background-size: 100%;         /* makes image fill screen */
   background-position: center center;    /* centers image */
   background-repeat: no-repeat;   /* prevents tiling */
