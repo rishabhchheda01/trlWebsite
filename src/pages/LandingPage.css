@@ -24,7 +24,7 @@ main {
 .landing-image {
   width: min(90vw, 550px);
   position: absolute;
-  top: 10vh;
+  top: 5vh;
   height: auto;
   display: block;
   margin: 0 auto 8px;
