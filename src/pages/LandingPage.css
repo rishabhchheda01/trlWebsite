@@ -3,6 +3,8 @@ main {
   color: white;
   text-align: center;
   font-family: 'Georgia', 'Times New Roman', serif;
+  min-height: 100vh;
+  width: 100%;
 
   /* --- added animation --- */
   display: grid;
@@ -13,15 +15,14 @@ main {
 }
 /* Minimal styles for the LandingPage component */
 .landing {
-  height: auto;
+  min-height: 100vh;
   place-items: center;
-  background: #E11933;
+  background: transparent;
   color: white;
   text-align: center;
   font-family: 'Caveat', 'Permanent Marker', cursive;
   display: grid;
-  
-
+  position: relative;
 }
 
 .landing-image {
