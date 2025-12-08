@@ -10,7 +10,7 @@
   font-family: 'Helvetica Neue', sans-serif;
 
   /* === Background image styling === */
-  background-image: url("../../assets/black-w-white-washbg.png");
+  background-image: url("trlWebsite/src/assets/black-bg-textured.jpeg");
   background-size: 100%;         /* makes image fill screen */
   background-position: center center;    /* centers image */
   background-repeat: no-repeat;   /* prevents tiling */
@@ -69,3 +69,127 @@
   font-size: 0.95rem;
   line-height: 1.4;
 }
+
+/* When a card is expanded */
+.event-card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 80vw;         /* large but not full width */
+  max-width: 900px;
+  height: auto;
+  max-height: 85vh;
+  overflow-y: auto;    /* scroll inside */
+  transform: translate(-50%, -50%);
+  z-index: 1002;
+  background-color: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
+  border-radius: 18px;
+  padding-bottom: 1rem;
+  animation: popUp 0.25s ease;
+}
+
+/* Dim background when expanded */
+.events-grid.expanded-mode::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1001;
+}
+
+/* Simple popup animation */
+@keyframes popUp {
+  from { opacity: 0; transform: translate(-50%, -40%); }
+  to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* Expanded mode creates a clickable backdrop */
+.events-grid.expanded-mode {
+  position: relative;
+  z-index: 1000;
+}
+
+.events-grid.expanded-mode::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  z-index: 1001;
+}
+
+/* Close (X) button */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 2000;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Fade-in animation for expanded card */
+.event-card.expanded {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Fade-out animation */
+.event-card.fade-out {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.95);
+  }
+}
+
+/* Past Events section header */
+.past-heading {
+  margin-top: 4rem;
+  color: #e0e0e0;
+}
+
+/* Past events card tint */
+.past-event-card {
+  background-color: rgba(116, 116, 182, 0.1); /* cooler tone */
+  border: 1px solid rgba(180, 180, 200, 0.10);
+}
+
+.past-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(180, 180, 210, 0.25);
+}
+
