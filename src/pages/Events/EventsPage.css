@@ -81,25 +81,12 @@
   max-height: 85vh;
   overflow-y: auto;    /* scroll inside */
   transform: translate(-50%, -50%);
-  z-index: 1002;
+  z-index: 1003;
   background-color: rgba(20, 20, 20, 0.95);
   box-shadow: 0 0 40px rgba(0,0,0,0.6);
   border-radius: 18px;
   padding-bottom: 1rem;
   animation: popUp 0.25s ease;
-}
-
-/* Dim background when expanded */
-.events-grid.expanded-mode::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.55);
-  backdrop-filter: blur(4px);
-  z-index: 1001;
 }
 
 /* Simple popup animation */
@@ -108,19 +95,16 @@
   to   { opacity: 1; transform: translate(-50%, -50%); }
 }
 
-/* Expanded mode creates a clickable backdrop */
-.events-grid.expanded-mode {
-  position: relative;
-  z-index: 1000;
-}
-
-.events-grid.expanded-mode::after {
-  content: "";
+/* Backdrop overlay */
+.backdrop-overlay {
   position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(4px);
-  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1002;
+  cursor: pointer;
 }
 
 /* Close (X) button */
@@ -188,7 +172,7 @@
   border: 1px solid rgba(180, 180, 200, 0.10);
 }
 
-.past-event-card:hover {
+.past-event-card:hover:not(.expanded) {
   transform: translateY(-6px);
   box-shadow: 0 12px 40px rgba(180, 180, 210, 0.25);
 }

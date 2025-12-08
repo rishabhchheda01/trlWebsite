@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import Navbar from "../../components/Navbar";
 import "./EventsPage.css";
 
@@ -67,105 +67,112 @@ export default function EventsPage() {
     }, 250); // match CSS animation
   };
 
-  // CLOSE ON OUTSIDE CLICK
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (expandedRef.current && !expandedRef.current.contains(e.target)) {
-        closeCard();
-      }
+  const handleBackdropClick = (e) => {
+    if (e.target.classList.contains('backdrop-overlay')) {
+      closeCard();
     }
-    if (expandedId !== null) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [expandedId]);
+  };
 
   return (
     <>
       <Navbar />
-      <main className="events-page">
+      <div className="events-page">
         <h2 className="events-heading">Upcoming Events</h2>
 
-        <div className={`events-grid ${expandedId ? "expanded-mode" : ""}`}>
+        <div className="events-grid">
           {events.map((event) => {
-            const isOpen = expandedId === event.id;
-
             return (
               <div
                 key={event.id}
-                className={`event-card 
-                            ${isOpen ? "expanded" : ""} 
-                            ${isOpen && animatingClose ? "fade-out" : ""}`}
-                onClick={() => !isOpen && openCard(event.id)}
-                ref={isOpen ? expandedRef : null}
+                className="event-card"
+                onClick={() => openCard(event.id)}
               >
-
-                {/* Close button */}
-                {isOpen && (
-                  <button className="close-btn" onClick={closeCard}>
-                    ✕
-                  </button>
-                )}
-
-                {/* One image only */}
                 <img src={event.image} alt={event.description} />
 
                 <div className="event-content">
                   <p className="event-date">{event.date}</p>
                   <p className="event-desc">{event.description}</p>
                 </div>
-
-                {isOpen && (
-                  <div className="event-expanded">
-                    <h3 className="event-subheading">About This Event</h3>
-                    <p className="event-details">{event.details}</p>
-                  </div>
-                )}
               </div>
             );
           })}
         </div>
+
+        {/* Backdrop overlay */}
+        {expandedId && (
+          <div className="backdrop-overlay" onClick={handleBackdropClick}></div>
+        )}
+
+        {/* Expanded card overlay */}
+        {expandedId && events.find(e => e.id === expandedId) && (
+          <div
+            className={`event-card expanded ${animatingClose ? "fade-out" : ""}`}
+            ref={expandedRef}
+          >
+            <button className="close-btn" onClick={closeCard}>
+              ✕
+            </button>
+
+            <img src={events.find(e => e.id === expandedId).image} alt={events.find(e => e.id === expandedId).description} />
+
+            <div className="event-content">
+              <p className="event-date">{events.find(e => e.id === expandedId).date}</p>
+              <p className="event-desc">{events.find(e => e.id === expandedId).description}</p>
+            </div>
+
+            <div className="event-expanded">
+              <h3 className="event-subheading">About This Event</h3>
+              <p className="event-details">{events.find(e => e.id === expandedId).details}</p>
+            </div>
+          </div>
+        )}
                 {/* ---------------- PAST EVENTS ---------------- */}
         <h2 className="events-heading past-heading">Past Events</h2>
 
-        <div className={`events-grid ${expandedId ? "expanded-mode" : ""}`}>
+        <div className="events-grid">
           {pastEvents.map((event) => {
-            const isOpen = expandedId === event.id;
-
             return (
               <div
                 key={event.id}
-                className={`event-card past-event-card
-                            ${isOpen ? "expanded" : ""} 
-                            ${isOpen && animatingClose ? "fade-out" : ""}`}
-                onClick={() => !isOpen && openCard(event.id)}
-                ref={isOpen ? expandedRef : null}
+                className="event-card past-event-card"
+                onClick={() => openCard(event.id)}
               >
-                {isOpen && (
-                  <button className="close-btn" onClick={closeCard}>
-                    ✕
-                  </button>
-                )}
-
                 <img src={event.image} alt={event.description} />
 
                 <div className="event-content">
                   <p className="event-date">{event.date}</p>
                   <p className="event-desc">{event.description}</p>
                 </div>
-
-                {isOpen && (
-                  <div className="event-expanded">
-                    <h3 className="event-subheading">About This Event</h3>
-                    <p className="event-details">{event.details}</p>
-                  </div>
-                )}
               </div>
             );
           })}
         </div>
 
-      </main>
+        {/* Expanded past event overlay */}
+        {expandedId && pastEvents.find(e => e.id === expandedId) && (
+          <div
+            className={`event-card past-event-card expanded ${animatingClose ? "fade-out" : ""}`}
+            ref={expandedRef}
+          >
+            <button className="close-btn" onClick={closeCard}>
+              ✕
+            </button>
+
+            <img src={pastEvents.find(e => e.id === expandedId).image} alt={pastEvents.find(e => e.id === expandedId).description} />
+
+            <div className="event-content">
+              <p className="event-date">{pastEvents.find(e => e.id === expandedId).date}</p>
+              <p className="event-desc">{pastEvents.find(e => e.id === expandedId).description}</p>
+            </div>
+
+            <div className="event-expanded">
+              <h3 className="event-subheading">About This Event</h3>
+              <p className="event-details">{pastEvents.find(e => e.id === expandedId).details}</p>
+            </div>
+          </div>
+        )}
+
+      </div>
     </>
   );
 }
