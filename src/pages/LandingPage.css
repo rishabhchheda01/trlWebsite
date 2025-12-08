@@ -1,6 +1,9 @@
 main {
   background: #E11933;
-  min-height: 100vh;
+  color: white;
+  text-align: center;
+  font-family: 'Georgia', 'Times New Roman', serif;
+
   /* --- added animation --- */
   display: grid;
   background: linear-gradient(270deg, #E11933, #c7142c, #E11933);
@@ -22,9 +25,9 @@ main {
 }
 
 .landing-image {
-  width: min(90vw, 550px);
+  width: min(90vw, 400px);
   position: absolute;
-  top: 5vh;
+  top: 20vh;
   height: auto;
   display: block;
   margin: 0 auto 8px;
@@ -101,12 +104,9 @@ main {
 
 .landing-description {
   position: absolute;
-  top: 70vh;
-}
-
-.landing-description h1 {
-  font-size: 3.5rem;
-  font-weight: 700;
+  top: 72vh;
+  padding-top: 20px;
+  width: 100%;
 }
 
 h2 {
