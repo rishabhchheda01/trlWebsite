@@ -1,0 +1,155 @@
+/* Notebook Theme Styles */
+.notebook-container {
+  min-height: 100vh;
+  background: #f5f5dc;
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    #e0e0e0 31px,
+    #e0e0e0 33px
+  );
+  background-size: 100% 33px;
+  position: relative;
+  padding: 80px 20px 40px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+.notebook-lines {
+  position: absolute;
+  left: 80px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: #ff6b6b;
+  opacity: 0.3;
+}
+
+.notebook-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+  padding: 20px 0 30px;
+  text-align: center;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+}
+
+/* Title with Pin */
+.title-wrapper {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.title-wrapper .pin {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pin {
+  width: 20px;
+  height: 20px;
+  background: #c0392b;
+  border-radius: 50% / 60%;
+  position: relative;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+  animation: pinDrop 0.45s ease-out;
+  z-index: 10;
+}
+
+.pin::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8px;
+  height: 8px;
+  background: #e74c3c;
+  border-radius: 50%;
+}
+
+/* Keep about-section container for the Eboard cards */
+.about-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* small helper text style used on the page */
+.notebook-text {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: #2c3e50;
+}
+
+/* Subtle card container spacing so EboardMember cards don't overlap */
+.about-section > div {
+  margin-bottom: 1.5rem;
+}
+
+/* Animations used by the page */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pinDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .notebook-container { 
+    padding: 60px 15px 30px; 
+  }
+  .notebook-lines { 
+    left: 40px; 
+  }
+  .notebook-title { 
+    font-size: 2rem; 
+    padding: 15px 0 25px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .notebook-title { 
+    font-size: 1.6rem; 
+  }
+  .title-wrapper { 
+    margin-bottom: 20px; 
+  }
+}
